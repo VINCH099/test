@@ -5,6 +5,7 @@
 
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,
@@ -803,7 +804,7 @@ body::-webkit-scrollbar-track {
   }
 
   .menu__btn {
-    padding: 10px 10px;
+    padding: 15px 10px;
     font-size: 0.9em;
   }
 
