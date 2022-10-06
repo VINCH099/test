@@ -5,6 +5,7 @@
 
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,
@@ -40,7 +41,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   color: #fff;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -636,6 +637,12 @@ body::-webkit-scrollbar-track {
   align-items: center;
   max-width: 330px;
   text-align: center;
+
+  /* display: grid;
+  gap: 20px;
+  text-align: center;
+  max-width: 330px;
+  grid-auto-rows: min-content; */
   align-self: flex-end;
   position: relative;
 }
@@ -654,7 +661,7 @@ body::-webkit-scrollbar-track {
   position: absolute;
   bottom: -60px;
   z-index: -1;
-  /* max-width: 450px; */
+  max-width: 450px;
 }
 
 /* =======/ MEDIA /======= */
@@ -797,8 +804,8 @@ body::-webkit-scrollbar-track {
   }
 
   .menu__btn {
-    padding: 15px 10px;
-    font-size: 0.9em;
+    padding: 10px 10px;
+    font-size: 0.8em;
   }
 
   .menu__btn img {
