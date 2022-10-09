@@ -37,7 +37,7 @@ img {
 
 body {
   background: #161616;
-  min-height: 300vh;
+  min-height: 500vh;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   color: #fff;
@@ -445,7 +445,7 @@ body::-webkit-scrollbar-track {
   justify-content: start;
   justify-items: center;
   gap: 10px;
-  padding-left: min(60px, calc(1vw * 5));
+  padding-left: min(60px, calc(1vw * 10));
 }
 
 .button__prime {
@@ -463,6 +463,7 @@ body::-webkit-scrollbar-track {
   position: relative;
   border: 2px solid #e4222c;
   border-radius: 6px;
+  width: fit-content;
 }
 
 .button__prime::after {
@@ -474,7 +475,7 @@ body::-webkit-scrollbar-track {
   z-index: -1;
 }
 
-.master__order--btn-icon {
+.order--btn-icon {
   fill: #fff;
   width: 20px;
   height: 20px;
@@ -482,17 +483,14 @@ body::-webkit-scrollbar-track {
 }
 
 .master__order--btn::before {
-  content: '';
+  content: url(../img/keys.PNG);
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 30px;
-  height: 30px;
-  background-image: url(../img/keys.PNG);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  transform: translate(-90%, 60%);
+  width: 50px;
+  height: 50px;
+  transform: translate(-100%, 80%) rotate(-15deg);
+  z-index: -1;
 }
 
 .order__text {
@@ -701,9 +699,197 @@ body::-webkit-scrollbar-track {
 
 /* =======/ SALE /======= */
 
+.sale {
+  padding-bottom: 85px;
+}
+
 .sale__title {
   text-align: center;
   margin-bottom: 120px;
+  padding: 0 10px;
+}
+
+.sale__inner {
+  display: flex;
+  gap: 60px;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sale__bg {
+  position: absolute;
+  z-index: -1;
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 30px #000);
+}
+
+.sale__bg--cup {
+  width: 120px;
+  top: 0;
+  right: 0;
+  transform: translate(30%, -120%);
+}
+.sale__bg--mouse {
+  width: 80px;
+  top: 0;
+  right: 0;
+  transform: translate(200%, 50%) rotate(-45deg);
+}
+.sale__bg--keyboard {
+  width: 400px;
+  bottom: 0;
+  right: 0;
+  transform: translate(45%, 60%) rotate(-30deg);
+  z-index: 1;
+  filter: drop-shadow(30px -10px 20px #000);
+}
+
+/* =======/ SALE PRICE /======= */
+
+.sale__price {
+  font-weight: 700;
+  max-width: 120px;
+}
+
+.price__new {
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.price__new span {
+  font-size: 38px;
+  color: #23bb2d;
+}
+
+.price__old s {
+  font-size: 22px;
+}
+
+/* =======/ SALE OFFER /======= */
+
+.sale__offer {
+  max-width: 370px;
+  padding-left: min(60px, calc(1vw * 10));
+  align-self: flex-start;
+}
+
+.offer__key,
+.offer__date {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.offer__key::before {
+  content: url(/img/keys.PNG);
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -10px;
+  left: -55px;
+  z-index: -1;
+}
+
+.offer__title {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.offer__title .accent {
+  display: block;
+}
+
+.offer__discount {
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 1;
+  padding-bottom: 20px;
+  text-shadow: 0 0 50px var(--accent-color), 0 0 100px var(--accent-color), 0 0 150px var(--accent-color);
+}
+
+/* =======/ SALE FORM /======= */
+
+.sale__form {
+  position: relative;
+  z-index: 10;
+  flex: 1 1 370px;
+}
+
+.sale__form p {
+  padding: 0 15px 10px;
+}
+
+.form__group {
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.form__group:last-child {
+  margin-bottom: 60px;
+}
+
+.form__label {
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+  padding: 15px;
+  border-right: 1px solid #838383;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.form__input {
+  width: 100%;
+  padding: 20px 15px;
+  padding-left: 60px;
+  border: none;
+  border-radius: 10px;
+}
+
+.form__icon {
+  fill: #47454a;
+  width: 15px;
+  height: 15px;
+}
+
+.form__input::placeholder {
+  color: #a0a0a0;
+}
+
+.form__group-button {
+  margin-top: 50px;
+  display: grid;
+  gap: 30px;
+  justify-content: start;
+  justify-items: center;
+}
+
+.form__button {
+  padding: 25px 20px;
+  font-size: 1em;
+}
+
+.form__button-text {
+  display: flex;
+  max-width: 250px;
+}
+.form__button-text--icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--accent-color);
+  margin-right: 10px;
+}
+/* =======/ GOOGLE /======= */
+
+.google {
+  height: 100vh;
+  background-color: #fff;
 }
 
 /* =======/ MEDIA /======= */
@@ -855,8 +1041,9 @@ body::-webkit-scrollbar-track {
   }
 
   .menu__btn {
-    padding: 10px 10px;
-    font-size: 0.8em;
+    padding: 15px 15px;
+    font-size: 0.9em;
+    width: min-content;
   }
 
   .menu__btn img {
@@ -882,5 +1069,9 @@ body::-webkit-scrollbar-track {
 
   .chuck__title span {
     font-size: 40px;
+  }
+
+  .sale__title {
+    font-size: 30px;
   }
 }
