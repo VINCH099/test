@@ -892,7 +892,8 @@ body::-webkit-scrollbar-track {
 
 .clients,
 .secure,
-.pricing {
+.pricing,
+.projects {
   background-color: #fff;
   color: var(--dark-color);
   position: relative;
@@ -1327,7 +1328,6 @@ body::-webkit-scrollbar-track {
 /* =======/ CHART /======= */
 
 .chart {
-  height: 200vh;
 }
 
 .chart__inner {
@@ -1336,7 +1336,6 @@ body::-webkit-scrollbar-track {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  padding-top: 20px;
 }
 
 .content__title {
@@ -1356,6 +1355,18 @@ body::-webkit-scrollbar-track {
   z-index: 10;
   transform: translate(-50%, -100%);
 }
+
+.chart__content {
+  padding: 30px 0;
+}
+
+/* =======/ PROJECTS /======= */
+
+.projects {
+  height: 200vh;
+}
+
+/* =======/ MEDIA /======= */
 
 /* =======================| 959 |======================= */
 
