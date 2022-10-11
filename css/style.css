@@ -1353,7 +1353,7 @@ body::-webkit-scrollbar-track {
   border-width: 0 65px 65px 65px;
   border-color: transparent transparent #1c1b1b transparent;
   z-index: 10;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, -95%);
 }
 
 .chart__content {
