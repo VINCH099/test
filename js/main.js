@@ -35,3 +35,16 @@ const telSelector = form.querySelector('input[type="tel"]')
 const inputMask = new Inputmask('+38 (999) 999-99-99')
 
 inputMask.mask(telSelector)
+
+var typed = new Typed('#typed', {
+  strings: [
+    'Заявка на кредит онлайн',
+    'Купить мягкие игрушки оптом',
+    'Вызвать строительную бригаду',
+    'Купить кухонное оборудование',
+    'Вызвать замерщика окон',
+  ],
+  typeSpeed: 50,
+  backSpeed: 20,
+  loop: 'true',
+})

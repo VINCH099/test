@@ -11,8 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="./libs/inputmask.min.js"></script>
-  <script defer src="./js/main.js" ></script>
+  <script defer src="./libs/inputmask.min.js"></script>
+  <script defer src="./libs/typed.min.js"></script>
+  <script defer src="./js/main.js"></script>
 </head>
 
 <body>
@@ -272,75 +273,329 @@
         <p class="offer__key">Сделаем под ключ за 2 недели!</p>
 
         <h3 class="offer__title">И готовы приступить прямо сейчас
-        <span class="accent">Со скидкой</span></h3>
+          <span class="accent">Со скидкой</span>
+        </h3>
 
         <p class="offer__discount">30%</p>
 
         <p class="offer__date">Цена действительна до 31.12.2022</p>
-        
+
         <p>Начните зарабатывать с помощью наших<br>лендингов - <b>уже сейчас</b></p>
       </div>
 
-
       <form class="sale__form" action="#" method="POST">
 
-  
-          <p>Введите ваше имя:</p>
-          <div class="form__group">
-            <label class="form__label" for="name">
-              <svg class="form__icon">
-                <use xlink:href="img/icons/sprite.svg#icon-user"></use>
-              </svg>
-            </label>
-            <input class="form__input" type="text" id="name" required placeholder="Евкакий Альбертович Шифутинский" />
-          </div>
-  
-          <p>Введите ваш телефон:</p>
-          <div class="form__group">
-            <label class="form__label" for="phone">
-              <svg class="form__icon">
-                <use xlink:href="img/icons/sprite.svg#icon-phone"></use>
-              </svg>
-            </label>
-            <input class="form__input" type="tel" id="phone" required placeholder="+38 (___) ___-__-__"/>
-          </div>
-  
-          <p>Введите вашу почту:</p>
-          <div class="form__group">
-            <label class="form__label" for="email">
-              <svg class="form__icon">
-                <use xlink:href="img/icons/sprite.svg#icon-mail"></use>
-              </svg>
-            </label>
-            <input class="form__input" type="email" id="email" required placeholder="чётотам@четотам.com" />
-          </div>
+        <p>Введите ваше имя:</p>
+        <div class="form__group">
+          <label class="form__label" for="name">
+            <svg class="form__icon">
+              <use xlink:href="img/icons/sprite.svg#icon-user"></use>
+            </svg>
+          </label>
+          <input class="form__input" type="text" id="name" required placeholder="Евкакий Альбертович Шифутинский" />
+        </div>
 
-  
-          <div class="form__group-button">
-            <button class="button__prime form__button" type="submit">
-              Заказать лендинг со скидкой
-              <svg class="order--btn-icon">
-                <use xlink:href="img/icons/sprite.svg#icon-arrow-right"></use>
-              </svg>
-            </button>
-  
-            <span class="form__button-text">
-              <svg class="form__button-text--icon"><use xlink:href="img/icons/sprite.svg#icon-clock"></use></svg>
-              Свяжемся с вами в ближайшее рабочее время
-            </span>
-  
-          </div>
-  
+        <p>Введите ваш телефон:</p>
+        <div class="form__group">
+          <label class="form__label" for="phone">
+            <svg class="form__icon">
+              <use xlink:href="img/icons/sprite.svg#icon-phone"></use>
+            </svg>
+          </label>
+          <input class="form__input" type="tel" id="phone" required placeholder="+38 (___) ___-__-__" />
+        </div>
+
+        <p>Введите вашу почту:</p>
+        <div class="form__group">
+          <label class="form__label" for="email">
+            <svg class="form__icon">
+              <use xlink:href="img/icons/sprite.svg#icon-mail"></use>
+            </svg>
+          </label>
+          <input class="form__input" type="email" id="email" required placeholder="чётотам@четотам.com" />
+        </div>
+
+
+        <div class="form__group-button">
+          <button class="button__prime form__button" type="submit">
+            Заказать лендинг со скидкой
+            <svg class="order--btn-icon">
+              <use xlink:href="img/icons/sprite.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+
+          <span class="form__button-text">
+            <svg class="form__button-text--icon">
+              <use xlink:href="img/icons/sprite.svg#icon-clock"></use>
+            </svg>
+            Свяжемся с вами в ближайшее рабочее время
+          </span>
+
+        </div>
 
       </form>
 
       <img class="sale__bg sale__bg--cup" src="./img/cup.png" alt="cup">
-    <img class="sale__bg sale__bg--mouse" src="./img/mouse.png" alt="mouse">
-    <img class="sale__bg sale__bg--keyboard" src="./img/keyboard.png" alt="keyboard">
+      <img class="sale__bg sale__bg--mouse" src="./img/mouse.png" alt="mouse">
+      <img class="sale__bg sale__bg--keyboard" src="./img/keyboard.png" alt="keyboard">
+
     </div>
-    
+
   </section>
-  <section class="google"></section>
+  <section class="clients">
+    <div class="clients__inner container">
+
+      <div class="clients__image">
+        <img class="image__google" src="./img/goggle.gif" alt="google">
+      </div>
+
+      <div class="clients__find">
+
+        <h2 class="find__title">Как вы будете получать клиентов?</h2>
+
+        <p class="find__subtitle">Буквально в первые <b>24 часа</b> после<br>того как ваш сайт будет готов?</p>
+
+        <div class="find__searchbar">
+
+          <img class="searchbar__google-logo" src="./img/google-logo.png" alt="google-logo" width="50">
+
+          <input class="searchbar__input" id="typed" type="text" spellcheck="false">
+
+          <button type="submit" class="searchbar__btn" disabled>
+            <svg class="searchbar__btn-icon">
+              <use xlink:href="img\icons\sprite.svg#icon-search"></use>
+            </svg>
+          </button>
+        </div>
+
+        <p><b>Благодаря системе Google ADWORDS</b> и грамотной настройке нашего SEO специалиста - ваш сайт будет на
+          первых строчках выдачи поисковика уже через несколько мгновений после настройки</p>
+        <p>Отдыхайте, ваш сайт найдет вам клиентов автоматически!</p>
+
+        <button class="button__prime clients__button">Узнать подробнее</button>
+        <span>* C вами свяжется наш представитель<br>и расскажет об этапах работы над сайтом</span>
+
+
+        <img class="clients__bg clients__bg--sunglasses" src="./img/sunglasses.png" alt="sunglasses">
+
+        <img class="clients__bg clients__bg--glass" src="./img/glass.PNG" alt="glass">
+
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="pricing">
+    <h2 class="pricing__title">Сколько стоит ваш<br>лендинг пейдж:</h2>
+    <div class="pricing__inner container">
+
+      <img class="pricing__bg pricing__bg--pen-holder" src="./img/pen-holder.jpg" alt="">
+
+      <img class="pricing__bg pricing__bg--camera" src="./img/camera.jpg" alt="">
+
+      <ul class="price__promo">
+        <li class="promo__item">
+          <img src="./img/cat.JPG" alt="cat">
+        </li>
+        <li class="promo__item">
+          <p>Углубленная аналитика и исследование бизнеса</p>
+          <div class="tooltip"
+            data-text="Собираем информацию о ЦА, продукте, конкурентах. Анализируем, находим весомые преимущества. Прописываем мета-теги, убираем дубли контента и т.д">
+            <svg class="price__icon promo__item-icon">
+              <use xlink:href="img/icons/sprite.svg#icon-info-circle"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="promo__item">
+          <p>Создание шедевральной концепции (прототип сайта)</p>
+        </li>
+        <li class="promo__item">
+          <p>Разработка очень продающего дизайн макета</p>
+        </li>
+        <li class="promo__item">
+          <p>Адаптационная верстка</p>
+        </li>
+        <li class="promo__item">
+          <p>Интеграция веб-аналитики: цели, UTM-метки, реф хвосты</p>
+          <div class="tooltip"
+            data-text="Принимаем меры для естественного продвижения сайта в поисковой выдаче. Прописываем мета-теги, убираем дубли контента и т.д">
+            <svg class="price__icon promo__item-icon">
+              <use xlink:href="img/icons/sprite.svg#icon-info-circle"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="promo__item">
+          <p>Внесение правок на любом этапе работы</p>
+          <div class="tooltip"
+            data-text="Принимаем меры для естественного продвижения сайта в поисковой выдаче. Прописываем мета-теги, убираем дубли контента и т.д">
+            <svg class="price__icon promo__item-icon">
+              <use xlink:href="img/icons/sprite.svg#icon-info-circle"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="promo__item">
+          <p>Контроль каждого этапа работы специалистами</p>
+          <div class="tooltip"
+            data-text="Принимаем меры для естественного продвижения сайта в поисковой выдаче. Прописываем мета-теги, убираем дубли контента и т.д">
+            <svg class="price__icon promo__item-icon">
+              <use xlink:href="img/icons/sprite.svg#icon-info-circle"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="promo__item">
+          <p>Внутрення SEO-оптимизаця</p>
+          <div class="tooltip"
+            data-text="Принимаем меры для естественного продвижения сайта в поисковой выдаче. Прописываем мета-теги, убираем дубли контента и т.д">
+            <svg class="price__icon promo__item-icon">
+              <use xlink:href="img/icons/sprite.svg#icon-info-circle"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="promo__item">
+          <p>Мультилендинг и геотаргетинг (если нужно)</p>
+          <div class="tooltip"
+            data-text="Принимаем меры для естественного продвижения сайта в поисковой выдаче. Прописываем мета-теги, убираем дубли контента и т.д">
+            <svg class="price__icon promo__item-icon">
+              <use xlink:href="img/icons/sprite.svg#icon-info-circle"></use>
+            </svg>
+          </div>
+        </li>
+        <li class="promo__item mobile-hide">
+          <p class="promo__item-summary">Срок разработки:</p>
+        </li>
+        <li class="promo__item mobile-hide">
+          <p class="promo__item-summary">Цена разработки:</p>
+        </li>
+      </ul>
+
+      <ul class="price__discount">
+        <li class="discount__item-head">
+          <img class="discount__image" src="./img/garland.png" alt="garland">
+          <h3 class="price__title price__title--discount">Акционный тариф</h3>
+          <p class="price__subtitle price__subtitle--discount">до 31 декабря 2022!</p>
+        </li>
+        <li class="discount__item mobile-hide">
+          <svg class="price__icon discount__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="discount__item mobile-hide">
+          <svg class="price__icon discount__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="discount__item mobile-hide">
+          <svg class="price__icon discount__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="discount__item mobile-hide">
+          <svg class="price__icon discount__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="discount__item mobile-hide">
+          <svg class="price__icon discount__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="discount__item mobile-hide">
+          <svg class="price__icon discount__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="discount__item mobile-hide">
+          <svg class="price__icon discount__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="discount__item mobile-hide">
+          <svg class="price__icon discount__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="discount__item mobile-hide">
+          <svg class="price__icon discount__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="discount__item mobile-hide">
+          <p class="price__subtitle"><b>до 14</b> рабочих дней</p>
+        </li>
+        <li class="discount__item">
+          <p class="price__title price__title--discount"><b>600$</b> (экономия <b>300$</b>)</p>
+        </li>
+        <li>
+          <button class="button__prime price__discount-btn">Заказать лендинг по акции</button>
+          <span class="order__text order__text--discount">* Ваши данные никогда не попадут к третьим лицам</span>
+          <img class="pricing__bg pricing__bg--apple-keyboard" src="./img/apple-keyboard.png" alt="">
+        </li>
+      </ul>
+
+      <ul class="price__sad">
+        <li class="sad__item-head">
+          <h3 class="price__title price__title--sad">Обычный тариф</h3>
+          <p class="price__subtitle price__subtitle--sad">Грустный :(</p>
+        </li>
+        <li class="sad__item">
+
+          <svg class="price__icon sad__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="sad__item">
+          <svg class="price__icon sad__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="sad__item">
+          <svg class="price__icon sad__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="sad__item">
+          <svg class="price__icon sad__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="sad__item">
+          <svg class="price__icon sad__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="sad__item">
+          <svg class="price__icon sad__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="sad__item">
+          <svg class="price__icon sad__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="sad__item">
+          <svg class="price__icon sad__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="sad__item">
+          <svg class="price__icon sad__item-icon">
+            <use xlink:href="img/icons/sprite.svg#icon-check"></use>
+          </svg>
+        </li>
+        <li class="sad__item">
+          <p class="price__subtitle"><b>до 14</b> рабочих дней</p>
+        </li>
+        <li class="sad__item">
+          <p class="price__title price__title--sad">900$</p>
+        </li>
+      </ul>
+
+    </div>
+  </section>
 </body>
 
 </html>
