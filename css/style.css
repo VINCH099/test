@@ -310,6 +310,18 @@ body::-webkit-scrollbar-track {
   border-radius: 4px;
   text-align: center;
 }
+
+.button__alt:hover {
+  animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 50px var(--accent-color);
+    box-shadow: 0 0 25px #e4222c;
+  }
+}
+
 .callback__time {
   font-style: italic;
 }
@@ -462,7 +474,7 @@ body::-webkit-scrollbar-track {
   border: 2px solid #e4222c;
   border-radius: 6px;
   width: fit-content;
-  z-index: 100;
+  z-index: 20;
 }
 
 .button__prime::after {
@@ -472,6 +484,12 @@ body::-webkit-scrollbar-track {
   inset: 4px;
   border-radius: 4px;
   z-index: -1;
+  transition: 0.2s;
+}
+
+.button__prime:hover:after {
+  inset: 0;
+  animation: pulse 1s ease-in-out 0.2s;
 }
 
 .order--btn-icon,
@@ -614,6 +632,7 @@ body::-webkit-scrollbar-track {
   border-left: none;
   border-top: none;
   transform: translateX(120%);
+  pointer-events: none;
 }
 
 .content__rocket-btn {
@@ -627,6 +646,9 @@ body::-webkit-scrollbar-track {
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+}
+.content__rocket-btn:hover {
+  box-shadow: inset 0px 0px 10px rgb(0 0 0 / 30%);
 }
 
 .content__rocket {
@@ -928,21 +950,19 @@ body::-webkit-scrollbar-track {
 
 .find__title,
 .safe__title,
-.content__title {
+.content__title,
+.projects__title,
+.reviews__title {
   font-size: 30px;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 20px;
 }
 
-.find__subtitle,
-.safe__subtitle {
-  text-transform: uppercase;
-  font-size: 16px;
-}
-
 .find__title::after,
-.safe__title::after {
+.safe__title::after,
+.projects__title::after,
+.reviews__title::after {
   content: '';
   position: absolute;
   left: 0;
@@ -950,6 +970,13 @@ body::-webkit-scrollbar-track {
   width: 100px;
   height: 2px;
   background-color: var(--accent-color);
+}
+
+.find__subtitle,
+.safe__subtitle,
+.reviews__subtitle {
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
 .clients__button {
@@ -984,7 +1011,7 @@ body::-webkit-scrollbar-track {
   justify-content: center;
   flex-shrink: 0;
   padding: 10px;
-  border: 1px solid #d5d5d5;
+  border: none;
   background: #5da2fc;
   border-radius: 0 4px 4px 0;
 }
@@ -1089,10 +1116,6 @@ body::-webkit-scrollbar-track {
 .promo__item-icon,
 .sad__item-icon {
   fill: #5d657d;
-}
-
-.tooltip:hover .promo__item-icon {
-  fill: var(--accent-color);
 }
 
 .promo__item-summary {
@@ -1230,10 +1253,14 @@ body::-webkit-scrollbar-track {
   padding: 5px;
   border-radius: 6px;
   color: #fff;
-  z-index: 999;
+  z-index: 20;
   visibility: hidden;
   transform: translateX(-50%);
   text-align: center;
+}
+
+.tooltip:hover .promo__item-icon {
+  fill: var(--accent-color);
 }
 
 .tooltip:hover::after,
@@ -1327,15 +1354,12 @@ body::-webkit-scrollbar-track {
 
 /* =======/ CHART /======= */
 
-.chart {
-}
-
 .chart__inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 0 30px;
 }
 
 .content__title {
@@ -1363,7 +1387,162 @@ body::-webkit-scrollbar-track {
 /* =======/ PROJECTS /======= */
 
 .projects {
-  height: 200vh;
+  padding-top: 100px;
+  display: grid;
+  justify-items: center;
+  padding-bottom: 45px;
+}
+
+.projects__title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.projects__title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.project__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1600px;
+  padding: 0 20px 30px;
+}
+
+.project__item {
+  position: relative;
+  flex: 1 1 380px;
+  overflow: hidden;
+}
+
+.project__item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project__item-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  background: rgba(53, 49, 47, 0.8);
+  padding: 10%;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+
+.project__item:hover .project__item-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.item-content__text {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.project__button {
+  padding-left: 70px;
+  padding-right: 70px;
+  margin-bottom: 15px;
+}
+
+.picker {
+  list-style: none;
+  display: flex;
+  gap: 3px;
+}
+
+.picker__circle {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+/* =======/ REVIEWS /======= */
+
+.reviews {
+  padding-top: 60px;
+  padding-bottom: 130px;
+}
+
+.reviews__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reviews__title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reviews__subtitle {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.reviews__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.reviews__item {
+  position: relative;
+  width: 200px;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews__item::before {
+  content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1' height='48' width='48'><path d='m40.05 42.6-13.2-13.2q-1.55 1.3-3.65 2-2.1.7-4.35.7-5.7 0-9.6-3.9-3.9-3.9-3.9-9.5t3.9-9.5q3.9-3.9 9.5-3.9t9.5 3.9q3.9 3.9 3.9 9.5 0 2.2-.675 4.225Q30.8 24.95 29.4 26.75l13.3 13.2ZM18.8 28.45q4.05 0 6.875-2.85t2.825-6.9q0-4.05-2.825-6.9Q22.85 8.95 18.8 8.95q-4.15 0-6.975 2.85Q9 14.65 9 18.7q0 4.05 2.825 6.9 2.825 2.85 6.975 2.85Zm-1.9-3.8v-4.2h-4.2V16.8h4.2v-4.15h3.65v4.15h4.15v3.65h-4.15v4.2Z' fill='white' /></svg>");
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0 0 0 / 30%);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.reviews__item:hover::before {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.reviews__item::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  width: 120%;
+  height: 100%;
+  background-image: url(../img/reviews-border.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+  transform: translateX(-50%);
+  z-index: -1;
 }
 
 /* =======/ MEDIA /======= */
@@ -1376,7 +1555,7 @@ body::-webkit-scrollbar-track {
     width: 30px;
     height: 18px;
     position: relative;
-    z-index: 5;
+    z-index: 10;
     cursor: pointer;
   }
 
