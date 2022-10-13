@@ -7,6 +7,11 @@
 html {
   box-sizing: border-box;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html.lock {
+  overflow: hidden;
 }
 
 *,
@@ -71,9 +76,12 @@ body::-webkit-scrollbar-track {
 /* =======/ MENU /======= */
 
 .menu {
+  position: fixed;
+  width: 100%;
   background: #242529;
   box-shadow: 0 0 20px #151515;
   margin-bottom: 35px;
+  z-index: 99;
 }
 
 .menu__inner {
@@ -85,6 +93,7 @@ body::-webkit-scrollbar-track {
 .logo {
   width: 100px;
   flex-shrink: 0;
+  z-index: 100;
 }
 
 .menu__list {
@@ -152,7 +161,7 @@ body::-webkit-scrollbar-track {
   width: 30px;
   height: 18px;
   position: relative;
-  z-index: 5;
+  z-index: 100;
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -191,6 +200,10 @@ body::-webkit-scrollbar-track {
 }
 
 /* =======/ HEADER BOTTOM /======= */
+
+.header__socials {
+  padding-top: 100px;
+}
 
 .social__list {
   list-style: none;
@@ -488,7 +501,7 @@ body::-webkit-scrollbar-track {
 }
 
 .button__prime:hover:after {
-  inset: 0;
+  inset: -2px;
   animation: pulse 1s ease-in-out 0.2s;
 }
 
@@ -509,6 +522,7 @@ body::-webkit-scrollbar-track {
   height: 50px;
   transform: translate(-100%, 80%) rotate(-15deg);
   z-index: -1;
+  pointer-events: none;
 }
 
 .order__text {
@@ -848,10 +862,7 @@ body::-webkit-scrollbar-track {
 .form__group {
   margin-bottom: 35px;
   position: relative;
-}
-
-.form__group:last-child {
-  margin-bottom: 60px;
+  width: 100%;
 }
 
 .form__label {
@@ -885,7 +896,6 @@ body::-webkit-scrollbar-track {
 }
 
 .form__group-button {
-  margin-top: 50px;
   display: grid;
   gap: 30px;
   justify-content: start;
@@ -948,21 +958,14 @@ body::-webkit-scrollbar-track {
   position: relative;
 }
 
-.find__title,
-.safe__title,
-.content__title,
-.projects__title,
-.reviews__title {
+.title__second {
   font-size: 30px;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 20px;
 }
 
-.find__title::after,
-.safe__title::after,
-.projects__title::after,
-.reviews__title::after {
+.title__second::after {
   content: '';
   position: absolute;
   left: 0;
@@ -1432,7 +1435,7 @@ body::-webkit-scrollbar-track {
   height: 100%;
   display: grid;
   align-items: center;
-  background: rgba(53, 49, 47, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   padding: 10%;
   transform: translateX(-100%);
   opacity: 0;
@@ -1545,6 +1548,184 @@ body::-webkit-scrollbar-track {
   z-index: -1;
 }
 
+/* =======/ QUESTIONS /======= */
+
+.questions {
+  display: grid;
+  justify-items: center;
+  padding-bottom: 150px;
+}
+
+.questions__block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.questions__block-content {
+  padding: 50px 0;
+}
+
+.questions__title {
+  margin-bottom: 20px;
+}
+
+.questions__btn {
+  padding: 20px 70px;
+}
+
+.questions__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  counter-reset: questions;
+}
+
+.questions__item {
+  max-width: 300px;
+  position: relative;
+}
+
+.questions__item::before {
+  counter-increment: questions;
+  content: counter(questions) '.';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 70px;
+  line-height: 0.8;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.questions__item-title {
+  font-size: 14px;
+  padding-left: 65px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+/* =======/ LAND /======= */
+
+.land {
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #000;
+  display: grid;
+  justify-items: center;
+  padding: 0 20px 50px;
+}
+
+.land__icon {
+  fill: var(--accent-color);
+  transform: rotate(90deg);
+  width: 70px;
+  height: 70px;
+  filter: drop-shadow(0px 0px 15px var(--accent-color));
+}
+
+.land__content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 90px 80px 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.land__content-title {
+  margin: 0 auto;
+  padding: 0 30px;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+}
+
+.land__discount {
+  display: grid;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 125px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+
+  text-shadow: 0 0 50px var(--accent-color), 0 0 100px var(--accent-color), 0 0 150px var(--accent-color);
+}
+
+.land__discount .accent {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.land__discount__icon {
+  fill: var(--accent-color);
+  width: 25px;
+  height: 25px;
+}
+
+.land__form {
+  width: 420px;
+  display: grid;
+  justify-items: center;
+}
+
+.land__form p {
+  padding: 0 15px 10px;
+  justify-self: start;
+}
+
+.land__form .form__icon {
+  fill: var(--accent-color);
+}
+
+/* =======/ АЩЩЕУК /======= */
+
+.footer {
+  padding-bottom: 50px;
+}
+
+.footer__text {
+  font-size: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 32px 0;
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.footer-social__list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.footer-callback {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.footer-callback__number {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 /* =======/ MEDIA /======= */
 
 /* =======================| 959 |======================= */
@@ -1555,7 +1736,6 @@ body::-webkit-scrollbar-track {
     width: 30px;
     height: 18px;
     position: relative;
-    z-index: 10;
     cursor: pointer;
   }
 
@@ -1569,7 +1749,7 @@ body::-webkit-scrollbar-track {
     display: flex;
     transition: all 0.3s;
     overflow: auto;
-    z-index: 1;
+    z-index: 99;
   }
 
   .menu__body.active {
@@ -1625,6 +1805,10 @@ body::-webkit-scrollbar-track {
 
   .price__sad {
     display: none;
+  }
+
+  .footer-callback {
+    margin-left: 0;
   }
 }
 
@@ -1706,6 +1890,10 @@ body::-webkit-scrollbar-track {
   .pricing__bg--camera {
     display: none;
   }
+
+  .questions__list {
+    flex-wrap: wrap;
+  }
 }
 
 /* =======================| 630 |======================= */
@@ -1725,6 +1913,15 @@ body::-webkit-scrollbar-track {
   }
   .tooltip::after {
     transform: translateX(-90%);
+  }
+
+  .land__content {
+    padding: 90px 0 40px;
+    border: none;
+  }
+
+  .land__form {
+    width: 100%;
   }
 }
 
@@ -1776,5 +1973,13 @@ body::-webkit-scrollbar-track {
 
   .safe__link {
     font-size: 12px;
+  }
+
+  .questions__block {
+    flex-wrap: wrap;
+  }
+
+  .questions__block-content {
+    padding: 0;
   }
 }

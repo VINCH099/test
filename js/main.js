@@ -1,8 +1,8 @@
 const menu = document.querySelector('.menu__body')
 const burger = document.querySelector('.menu__burger')
-const logo = document.querySelector('.header__inner')
+const logo = document.querySelector('.logo')
 
-const body = document.body
+const body = document.querySelector('html')
 
 if (menu && burger) {
   burger.addEventListener('click', () => {
@@ -20,13 +20,11 @@ menu.querySelectorAll('.menu__link').forEach((link) => {
   })
 })
 
-// logo.querySelectorAll('.logo').forEach((link) => {
-//   link.addEventListener('click', () => {
-//     menu.classList.remove('active')
-//     burger.classList.remove('active')
-//     body.classList.remove('lock')
-//   })
-// })
+logo.addEventListener('click', () => {
+  menu.classList.remove('active')
+  burger.classList.remove('active')
+  body.classList.remove('lock')
+})
 
 // inputmask
 
