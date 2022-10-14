@@ -821,7 +821,7 @@ body::-webkit-scrollbar-track {
 }
 
 .offer__key::before {
-  content: url('/img/keys.PNG');
+  content: url('../img/keys.PNG');
   position: absolute;
   width: 60px;
   height: 60px;
