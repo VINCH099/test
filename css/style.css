@@ -1933,7 +1933,7 @@ body::-webkit-scrollbar-track {
   }
 
   .menu__btn {
-    padding: 15px 15px;
+    padding: 15px 10px;
     font-size: 0.9em;
     width: min-content;
   }
